@@ -1,0 +1,57 @@
+how to create a map list in react
+
+the.state.Tickets //var defined
+ticket //each item in loop defined by self
+index //the key of map
+const var //definded first and using in view
+return //important for render the content in view
+
+const categories = this.state.Tickets.map((ticket, index) =>{
+            return(
+            
+                // category.dishes.length &&
+
+                <View className='ticketBox' id={index} key={index}>
+                    <View className='cuponLeft'>
+                        <Image class='cuponLeftImg' src='../../asset/eatIn/restaurant/coupon_restaurant_buy_left.png'></Image>
+                        <View className='info'>
+                            <View className='price'><Text className='priceText'>$ {ticket.value}</Text></View>
+                            <View className='cuponName'><Text className='cuponNameText'>{ticket.name}</Text></View>
+                        </View>
+                    </View>
+
+                        
+                    
+                        {(this.state.ticketId)!=(ticket.id)&&
+                           <View className='cuponRight'>
+                            <Image class='cuponRightImg' src='../../asset/eatIn/restaurant/coupon_restaurant_buy_right_unavailable.png'></Image>
+                                <View className='paidInfo'>
+
+                                    <View className='paid'><Text className='paidText'>$ {ticket.discount}</Text></View>
+                                    <View className='value'><Text className='valueText'>$ {ticket.value}</Text></View>
+                                    <Button className='paidBtn' onClick={this._paid.bind(this,ticket)}></Button>
+                           
+                                </View>
+                           </View>
+                        }
+                        {(this.state.ticketId)===(ticket.id)&&
+                           <View className='cuponRight'>
+                            <Image class='cuponRightImg' src='../../asset/eatIn/restaurant/coupon_restaurant_buy_right_available.png'></Image>
+                                <View className='paidInfo'>
+
+                                    <View className='paid'><Text className='paidText'>$ {ticket.discount}</Text></View>
+                                    <View className='value'><Text className='valueText'>$ {ticket.value}</Text></View>
+                                    <Button className='paidBtn' onClick={this._paid.bind(this,ticket.id)}></Button>
+
+                                </View>
+                           </View>
+                        }
+                        
+                        
+                    
+                </View>
+                
+                    
+                
+            )
+        })
