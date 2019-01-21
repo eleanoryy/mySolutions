@@ -1,0 +1,16 @@
+define animationData
+
+
+this.animation = ...createAnimation({
+  duration:100,
+  timingFunction: 'linear',
+})
+
+//set the translate info
+this.animation.scaleX(1.3);
+this.animation.translateX(45).step();
+
+//set the exported data to animationData
+animationData: this.animation.export(),
+      
+    
