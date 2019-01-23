@@ -1,0 +1,15 @@
+routerRedux
+
+
+import { routerRedux } from 'dva/router';
+dispatch(routerRedux.push({
+            pathname : '/...',
+   }))
+   
+   
+//sending params
+
+1.dispatch(routerRedux.push({pathname : '/couponDetail', query:要携带的参数 }))
+
+
+2.yield put (routerRedux.replace({ pathname: '/....',          query: payload        }));
